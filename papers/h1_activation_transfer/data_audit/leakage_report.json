@@ -1,0 +1,801 @@
+{
+  "clean_eval_path": "data\\tasks\\multi_hop_reasoning\\clean_eval.jsonl",
+  "clean_eval_rows": 396,
+  "clean_eval_version": "h1-clean-eval-v1",
+  "remaining_duplicate_keys": 0,
+  "remaining_overlap_rows": 0,
+  "removed_duplicate_examples": [
+    {
+      "answer": "Europe",
+      "batch": "v1",
+      "context": "Emma lives in Berlin. Berlin is in Germany. Germany is located in Europe. Europe has approximately 44 countries.",
+      "dedup_key_sha256": "5c3cc62fe9df855d3a7271084763465cb53c7e8644ac5a7331aa87a912ba08c3",
+      "first_eval_index": 31,
+      "hops": 4,
+      "question": "On which continent is the country where Emma lives?",
+      "reason": "exact_eval_duplicate",
+      "source_eval_index": 37
+    },
+    {
+      "answer": "Europe",
+      "batch": "v1",
+      "context": "Emma lives in Berlin. Berlin is in Germany. Germany is located in Europe. Europe has approximately 44 countries.",
+      "dedup_key_sha256": "5c3cc62fe9df855d3a7271084763465cb53c7e8644ac5a7331aa87a912ba08c3",
+      "first_eval_index": 31,
+      "hops": 4,
+      "question": "On which continent is the country where Emma lives?",
+      "reason": "exact_eval_duplicate",
+      "source_eval_index": 68
+    },
+    {
+      "answer": "India",
+      "batch": "v1",
+      "context": "Priya was born in Mumbai. Mumbai is a city in India. India is located in Asia.",
+      "dedup_key_sha256": "76bf39bdbb0512f19cbf346d4e0d3ebd2686c376b1695cf012868265d592d77f",
+      "first_eval_index": 75,
+      "hops": 3,
+      "question": "Which country was Priya born in?",
+      "reason": "exact_eval_duplicate",
+      "source_eval_index": 90
+    },
+    {
+      "answer": "48",
+      "batch": "v1",
+      "context": "Nadia was born in Tehran. Tehran is part of Iran. Iran is a nation in Asia. There are about 48 countries in Asia.",
+      "dedup_key_sha256": "03a80f5c8d593192c959149ea08f76b5d12be019d609fd55129cce3f5a13c491",
+      "first_eval_index": 41,
+      "hops": 4,
+      "question": "About how many countries share a continent with Nadia's birthplace?",
+      "reason": "exact_eval_duplicate",
+      "source_eval_index": 94
+    },
+    {
+      "answer": "Japan",
+      "batch": "v1",
+      "context": "Yuki works in Osaka. Osaka is part of Japan.",
+      "dedup_key_sha256": "cf1d1514b5f4f40350fe259d725d58be6d98bfd7a41bb870011f53c5c98398a1",
+      "first_eval_index": 84,
+      "hops": 2,
+      "question": "Which country does Yuki work in?",
+      "reason": "exact_eval_duplicate",
+      "source_eval_index": 112
+    },
+    {
+      "answer": "Japan",
+      "batch": "v1",
+      "context": "Yuki works in Osaka. Osaka is part of Japan.",
+      "dedup_key_sha256": "cf1d1514b5f4f40350fe259d725d58be6d98bfd7a41bb870011f53c5c98398a1",
+      "first_eval_index": 84,
+      "hops": 2,
+      "question": "Which country does Yuki work in?",
+      "reason": "exact_eval_duplicate",
+      "source_eval_index": 113
+    },
+    {
+      "answer": "Asia",
+      "batch": "v1",
+      "context": "Raj studies in Jakarta. Jakarta is a city in Indonesia. Indonesia lies on the continent of Asia.",
+      "dedup_key_sha256": "ce9ce27d699517dab115626625bdf41121884281be642a86093db230c9f92a0a",
+      "first_eval_index": 38,
+      "hops": 3,
+      "question": "Which continent does Raj study in?",
+      "reason": "exact_eval_duplicate",
+      "source_eval_index": 138
+    },
+    {
+      "answer": "Canada",
+      "batch": "v1",
+      "context": "Thomas lives in Montreal. Montreal is in Canada. Canada is part of North America.",
+      "dedup_key_sha256": "210f3cecf67ec0cb5df5fce138a883134f0c8d6b0ec3b37fa475b26836a672ac",
+      "first_eval_index": 54,
+      "hops": 3,
+      "question": "What country does Thomas live in?",
+      "reason": "exact_eval_duplicate",
+      "source_eval_index": 156
+    }
+  ],
+  "removed_duplicate_rows": 8,
+  "removed_overlap_examples": [
+    {
+      "answer": "Asia",
+      "batch": "v1",
+      "context": "Bob was born in Tokyo. Tokyo is in Japan. Japan is part of Asia.",
+      "dedup_key_sha256": "463b5fc5d2818a7b899dd09771235c39990168ae9055c54b1dc50cb02468b2f6",
+      "hops": 3,
+      "overlap_train_indices": [
+        104
+      ],
+      "question": "What continent is Bob from?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 0
+    },
+    {
+      "answer": "Europe",
+      "batch": "v1",
+      "context": "Elena lives in Vienna. Vienna is in Austria. Austria is located in Europe. Europe has approximately 44 countries.",
+      "dedup_key_sha256": "e85801163e2ab80119a9f2ad94d7e907821523c041cd232459d852d9f38c38ec",
+      "hops": 4,
+      "overlap_train_indices": [
+        211,
+        225
+      ],
+      "question": "On which continent is the country where Elena lives?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 1
+    },
+    {
+      "answer": "44",
+      "batch": "v1",
+      "context": "Zara lives in London. London is in United Kingdom. United Kingdom is located in Europe. Europe has approximately 44 countries.",
+      "dedup_key_sha256": "1ac8fbe7e0929ddecae0d43dc20af8acd3fbae6864f48335e083d0ad8f313fe3",
+      "hops": 4,
+      "overlap_train_indices": [
+        25
+      ],
+      "question": "Approximately how many countries are on the continent where Zara lives?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 2
+    },
+    {
+      "answer": "Africa",
+      "batch": "v1",
+      "context": "Ahmed works in Lagos. Lagos is located in Nigeria. Nigeria is on the continent of Africa. Africa consists of roughly 54 nations.",
+      "dedup_key_sha256": "d9236e4f7f3f45390b71adadb0cf28cc293cb80d89cb01fca18396b3316543da",
+      "hops": 4,
+      "overlap_train_indices": [
+        421
+      ],
+      "question": "What continent is the country where Ahmed works located on?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 3
+    },
+    {
+      "answer": "Japan",
+      "batch": "v1",
+      "context": "Bob was born in Tokyo. Tokyo is a city in Japan. Japan is located in Asia.",
+      "dedup_key_sha256": "566b13558f97e050b3309e8b82058e329fa3e9566da9a14ed844048b5ad2a12b",
+      "hops": 3,
+      "overlap_train_indices": [
+        300,
+        350
+      ],
+      "question": "Which country was Bob born in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 4
+    },
+    {
+      "answer": "Pakistan",
+      "batch": "v1",
+      "context": "Sara moved to Karachi. Karachi is part of Pakistan. Pakistan lies on the continent of Asia.",
+      "dedup_key_sha256": "a68d234e5999172718bac5d2e2506750c9b4b255e78504c835cd770df6952963",
+      "hops": 3,
+      "overlap_train_indices": [
+        5,
+        42,
+        503
+      ],
+      "question": "What country did Sara move to?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 7
+    },
+    {
+      "answer": "44",
+      "batch": "v1",
+      "context": "Maria was born in Rome. Rome is part of Italy. Italy is a nation in Europe. There are about 44 countries in Europe.",
+      "dedup_key_sha256": "9559461d3623f335dbb227c621b617a17d0ae069323c7e46c5e448574f19e5e5",
+      "hops": 4,
+      "overlap_train_indices": [
+        29
+      ],
+      "question": "About how many countries share a continent with Maria's birthplace?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 8
+    },
+    {
+      "answer": "Mexico",
+      "batch": "v1",
+      "context": "Carlos was born in Mexico City. Mexico City is a city in Mexico.",
+      "dedup_key_sha256": "1b4122242d8841aaf1485ba1377d8bbb58f1f62a902d592421e6a4d0d1e041dd",
+      "hops": 2,
+      "overlap_train_indices": [
+        128,
+        166,
+        382
+      ],
+      "question": "In which country was Carlos born?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 9
+    },
+    {
+      "answer": "Europe",
+      "batch": "v1",
+      "context": "Zara lives in London. London is located in United Kingdom. United Kingdom is a country on the continent of Europe.",
+      "dedup_key_sha256": "b4ba37f91a4f1a27ecfd2dfca239d8a845b63c3671602dd7ca379811d1c0a95a",
+      "hops": 3,
+      "overlap_train_indices": [
+        122,
+        320,
+        537
+      ],
+      "question": "On which continent does Zara live?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 10
+    },
+    {
+      "answer": "Europe",
+      "batch": "v1",
+      "context": "Layla lives in Istanbul. Istanbul is located in Turkey. Turkey is a country on the continent of Europe.",
+      "dedup_key_sha256": "44a069aca9b984f7ba165bd1f88fad79658a4866319984ffca06c81966cb342e",
+      "hops": 3,
+      "overlap_train_indices": [
+        270
+      ],
+      "question": "On which continent does Layla live?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 11
+    },
+    {
+      "answer": "Asia",
+      "batch": "v1",
+      "context": "Mei was born in Shanghai. Shanghai is part of China. China is a nation in Asia. There are about 48 countries in Asia.",
+      "dedup_key_sha256": "80e441cf810797a4b7640b3f113e3619609b1819d4823d31efc7eb8ba383ae9d",
+      "hops": 4,
+      "overlap_train_indices": [
+        153,
+        210,
+        398
+      ],
+      "question": "Which continent is Mei's birth country part of?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 12
+    },
+    {
+      "answer": "India",
+      "batch": "v1",
+      "context": "Priya lives in Mumbai. Mumbai is located in India.",
+      "dedup_key_sha256": "da7a4a6b4f50e353ae144716777232b3d888331659f610ffd1f987b87ab48a02",
+      "hops": 2,
+      "overlap_train_indices": [
+        494,
+        551
+      ],
+      "question": "What country does Priya live in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 14
+    },
+    {
+      "answer": "South America",
+      "batch": "v1",
+      "context": "Pablo lives in Lima. Lima is in Peru. Peru is located in South America. South America has approximately 12 countries.",
+      "dedup_key_sha256": "bad70a7c4e44d7460918f682e0636da5722ee571ed9f9cb0b11dc54cfcc3561a",
+      "hops": 4,
+      "overlap_train_indices": [
+        395
+      ],
+      "question": "On which continent is the country where Pablo lives?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 15
+    },
+    {
+      "answer": "Europe",
+      "batch": "v1",
+      "context": "Ivan works in Moscow. Moscow is located in Russia. Russia is on the continent of Europe. Europe consists of roughly 44 nations.",
+      "dedup_key_sha256": "5fc57d33a9936b3d06acc769ae09d29c5b9da8e272a482e2c61a4811ddb4a081",
+      "hops": 4,
+      "overlap_train_indices": [
+        90,
+        413
+      ],
+      "question": "What continent is the country where Ivan works located on?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 16
+    },
+    {
+      "answer": "Europe",
+      "batch": "v1",
+      "context": "Zara lives in London. London is located in United Kingdom. United Kingdom is a country on the continent of Europe.",
+      "dedup_key_sha256": "b4ba37f91a4f1a27ecfd2dfca239d8a845b63c3671602dd7ca379811d1c0a95a",
+      "hops": 3,
+      "overlap_train_indices": [
+        122,
+        320,
+        537
+      ],
+      "question": "On which continent does Zara live?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 19
+    },
+    {
+      "answer": "Mexico",
+      "batch": "v1",
+      "context": "Carlos was born in Mexico City. Mexico City is a city in Mexico.",
+      "dedup_key_sha256": "1b4122242d8841aaf1485ba1377d8bbb58f1f62a902d592421e6a4d0d1e041dd",
+      "hops": 2,
+      "overlap_train_indices": [
+        128,
+        166,
+        382
+      ],
+      "question": "In which country was Carlos born?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 20
+    },
+    {
+      "answer": "North America",
+      "batch": "v1",
+      "context": "James lives in Toronto. Toronto is located in Canada. Canada is a country on the continent of North America.",
+      "dedup_key_sha256": "866f18a30efd47651832f97c4d9615f24c18f827298bd76415d0d0154af5f674",
+      "hops": 3,
+      "overlap_train_indices": [
+        39,
+        199,
+        504,
+        535
+      ],
+      "question": "On which continent does James live?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 21
+    },
+    {
+      "answer": "Asia",
+      "batch": "v1",
+      "context": "Priya lives in Mumbai. Mumbai is in India. India is located in Asia. Asia has approximately 48 countries.",
+      "dedup_key_sha256": "525ed85a997f5825db6cb6c26708f32488852e7451da0265eda212784db5f8ed",
+      "hops": 4,
+      "overlap_train_indices": [
+        496
+      ],
+      "question": "On which continent is the country where Priya lives?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 22
+    },
+    {
+      "answer": "Asia",
+      "batch": "v1",
+      "context": "Raj lives in Jakarta. Jakarta is located in Indonesia. Indonesia is a country on the continent of Asia.",
+      "dedup_key_sha256": "b7c85a0e175c3606d9b5cf9d9e90ca21020e3e371bd0f2454ffc2d6682f472c6",
+      "hops": 3,
+      "overlap_train_indices": [
+        31,
+        448
+      ],
+      "question": "On which continent does Raj live?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 23
+    },
+    {
+      "answer": "Asia",
+      "batch": "v1",
+      "context": "Chen Wei studies in Beijing. Beijing is a city in China. China lies on the continent of Asia.",
+      "dedup_key_sha256": "7a95dca5455170c1592c0c0fd7d47896ca3337b6c870eaf294854b51fbfd9b2a",
+      "hops": 3,
+      "overlap_train_indices": [
+        70
+      ],
+      "question": "Which continent does Chen Wei study in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 24
+    },
+    {
+      "answer": "Asia",
+      "batch": "v1",
+      "context": "Sara works in Karachi. Karachi is located in Pakistan. Pakistan is on the continent of Asia. Asia consists of roughly 48 nations.",
+      "dedup_key_sha256": "237d6b61a1ab5fa318ebf3bc294876d9f55e3f9020eb00612467b2f6f8b6b090",
+      "hops": 4,
+      "overlap_train_indices": [
+        234,
+        447
+      ],
+      "question": "What continent is the country where Sara works located on?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 25
+    },
+    {
+      "answer": "12",
+      "batch": "v1",
+      "context": "Lucas works in Brasilia. Brasilia is located in Brazil. Brazil is on the continent of South America. South America consists of roughly 12 nations.",
+      "dedup_key_sha256": "278f970b316751a977fa6dd2e2d944da0d83f8221efab7ee00c326ec1c441614",
+      "hops": 4,
+      "overlap_train_indices": [
+        495
+      ],
+      "question": "How many nations are on the continent where Lucas works?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 26
+    },
+    {
+      "answer": "Australia",
+      "batch": "v1",
+      "context": "David lives in Sydney. Sydney is located in Australia.",
+      "dedup_key_sha256": "eb3b2719cd8280bdb10a420f3bf994b205d6001b81380441e4928b9f918e160c",
+      "hops": 2,
+      "overlap_train_indices": [
+        164
+      ],
+      "question": "What country does David live in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 27
+    },
+    {
+      "answer": "Asia",
+      "batch": "v1",
+      "context": "Nina studies in Seoul. Seoul is a city in South Korea. South Korea lies on the continent of Asia.",
+      "dedup_key_sha256": "c914f0ccace170ed9bf910cf52f0144d42050d98f149d713b97d9731f21f9c25",
+      "hops": 3,
+      "overlap_train_indices": [
+        93
+      ],
+      "question": "Which continent does Nina study in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 29
+    },
+    {
+      "answer": "Asia",
+      "batch": "v1",
+      "context": "Nina works in Seoul. Seoul is located in South Korea. South Korea is on the continent of Asia. Asia consists of roughly 48 nations.",
+      "dedup_key_sha256": "8a02526213bdd55dc3048bffe3594557c5d8a1d9d2a411c2a65a0ebd2ff82de0",
+      "hops": 4,
+      "overlap_train_indices": [
+        314
+      ],
+      "question": "What continent is the country where Nina works located on?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 30
+    },
+    {
+      "answer": "44",
+      "batch": "v1",
+      "context": "Layla lives in Istanbul. Istanbul is in Turkey. Turkey is located in Europe. Europe has approximately 44 countries.",
+      "dedup_key_sha256": "a091f0824d09a60af4f84b8e50cced8b230382a9b14a4fbfe4464a6bac7777fb",
+      "hops": 4,
+      "overlap_train_indices": [
+        237
+      ],
+      "question": "Approximately how many countries are on the continent where Layla lives?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 32
+    },
+    {
+      "answer": "Europe",
+      "batch": "v1",
+      "context": "Ivan was born in Moscow. Moscow is in Russia. Russia is part of Europe.",
+      "dedup_key_sha256": "5893e4e507b5a137141e44e2a3bda57c1c258caa2b6d763397a4c2880f9108d3",
+      "hops": 3,
+      "overlap_train_indices": [
+        87,
+        441
+      ],
+      "question": "What continent is Ivan from?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 34
+    },
+    {
+      "answer": "Europe",
+      "batch": "v1",
+      "context": "Elena studies in Vienna. Vienna is a city in Austria. Austria lies on the continent of Europe.",
+      "dedup_key_sha256": "5e243708104bf944a8176af6c0225db6e7c9a8af7600126713f5d9a45b0d8841",
+      "hops": 3,
+      "overlap_train_indices": [
+        476
+      ],
+      "question": "Which continent does Elena study in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 35
+    },
+    {
+      "answer": "South America",
+      "batch": "v1",
+      "context": "Sofia lives in Buenos Aires. Buenos Aires is in Argentina. Argentina is located in South America. South America has approximately 12 countries.",
+      "dedup_key_sha256": "bc8228ff852f346e3eb7aaa3378a28b878afc4512ea188fb5c0a22c049a13636",
+      "hops": 4,
+      "overlap_train_indices": [
+        183,
+        222,
+        416
+      ],
+      "question": "On which continent is the country where Sofia lives?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 36
+    },
+    {
+      "answer": "Canada",
+      "batch": "v1",
+      "context": "Thomas moved to Montreal. Montreal is part of Canada. Canada lies on the continent of North America.",
+      "dedup_key_sha256": "6b9706ab436763d2c956b97feacbcf6833bce4bd0b925439ce65f8338cec3af0",
+      "hops": 3,
+      "overlap_train_indices": [
+        52,
+        196,
+        264
+      ],
+      "question": "What country did Thomas move to?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 39
+    },
+    {
+      "answer": "Italy",
+      "batch": "v1",
+      "context": "Maria moved to Rome. Rome is part of Italy. Italy lies on the continent of Europe.",
+      "dedup_key_sha256": "bf140304908d3bdbf107abec8b0a6cf6409a7881655937d0c12af451a72c6821",
+      "hops": 3,
+      "overlap_train_indices": [
+        379
+      ],
+      "question": "What country did Maria move to?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 40
+    },
+    {
+      "answer": "Europe",
+      "batch": "v1",
+      "context": "Felix works in Madrid. Madrid is located in Spain. Spain is on the continent of Europe. Europe consists of roughly 44 nations.",
+      "dedup_key_sha256": "eadd7da68cac74aafe79d1226beab9b9cab759978c0c75723937bc49a5a8faa9",
+      "hops": 4,
+      "overlap_train_indices": [
+        21
+      ],
+      "question": "What continent is the country where Felix works located on?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 42
+    },
+    {
+      "answer": "Asia",
+      "batch": "v1",
+      "context": "Bob was born in Tokyo. Tokyo is in Japan. Japan is part of Asia.",
+      "dedup_key_sha256": "463b5fc5d2818a7b899dd09771235c39990168ae9055c54b1dc50cb02468b2f6",
+      "hops": 3,
+      "overlap_train_indices": [
+        104
+      ],
+      "question": "What continent is Bob from?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 47
+    },
+    {
+      "answer": "Asia",
+      "batch": "v1",
+      "context": "Chen Wei studies in Beijing. Beijing is a city in China. China lies on the continent of Asia.",
+      "dedup_key_sha256": "7a95dca5455170c1592c0c0fd7d47896ca3337b6c870eaf294854b51fbfd9b2a",
+      "hops": 3,
+      "overlap_train_indices": [
+        70
+      ],
+      "question": "Which continent does Chen Wei study in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 50
+    },
+    {
+      "answer": "North America",
+      "batch": "v1",
+      "context": "James works in Toronto. Toronto is located in Canada. Canada is on the continent of North America. North America consists of roughly 23 nations.",
+      "dedup_key_sha256": "9d1035b2dac7d011cab94b26cfed48aeaa0a49e8b48d82b17c42b9310cc3b79a",
+      "hops": 4,
+      "overlap_train_indices": [
+        172,
+        384
+      ],
+      "question": "What continent is the country where James works located on?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 51
+    },
+    {
+      "answer": "Nigeria",
+      "batch": "v1",
+      "context": "Ahmed lives in Lagos. Lagos is located in Nigeria.",
+      "dedup_key_sha256": "5f101858956394944acf10147c3e34501dac97eb8f82cc0119e10dc754d08936",
+      "hops": 2,
+      "overlap_train_indices": [
+        299,
+        374,
+        523
+      ],
+      "question": "What country does Ahmed live in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 52
+    },
+    {
+      "answer": "Italy",
+      "batch": "v1",
+      "context": "Maria works in Rome. Rome is part of Italy.",
+      "dedup_key_sha256": "e41ca29a79630248535d49d3b9161d8c85a27cc92ff5216637be76a8877bc14a",
+      "hops": 2,
+      "overlap_train_indices": [
+        189,
+        224,
+        328
+      ],
+      "question": "Which country does Maria work in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 53
+    },
+    {
+      "answer": "Mexico",
+      "batch": "v1",
+      "context": "Carlos was born in Mexico City. Mexico City is a city in Mexico.",
+      "dedup_key_sha256": "1b4122242d8841aaf1485ba1377d8bbb58f1f62a902d592421e6a4d0d1e041dd",
+      "hops": 2,
+      "overlap_train_indices": [
+        128,
+        166,
+        382
+      ],
+      "question": "In which country was Carlos born?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 55
+    },
+    {
+      "answer": "Saudi Arabia",
+      "batch": "v1",
+      "context": "Omar was born in Riyadh. Riyadh is a city in Saudi Arabia.",
+      "dedup_key_sha256": "0e03e19c2a8007ee1a60b09708d9de916bd3f635f05c8cb5cc62800f75021340",
+      "hops": 2,
+      "overlap_train_indices": [
+        126,
+        259,
+        469,
+        471
+      ],
+      "question": "In which country was Omar born?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 56
+    },
+    {
+      "answer": "United Kingdom",
+      "batch": "v1",
+      "context": "Zara works in London. London is part of United Kingdom.",
+      "dedup_key_sha256": "14a38ea3e7d6255cc0a3390b7c51daa10b1caf94bde83a843a80a149c37c308b",
+      "hops": 2,
+      "overlap_train_indices": [
+        173
+      ],
+      "question": "Which country does Zara work in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 57
+    },
+    {
+      "answer": "48",
+      "batch": "v1",
+      "context": "Nadia lives in Tehran. Tehran is in Iran. Iran is located in Asia. Asia has approximately 48 countries.",
+      "dedup_key_sha256": "94ac17e97338c3fa45853064e4cab3be054dd7adab241513c94478d416d0009d",
+      "hops": 4,
+      "overlap_train_indices": [
+        71,
+        198,
+        432
+      ],
+      "question": "Approximately how many countries are on the continent where Nadia lives?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 58
+    },
+    {
+      "answer": "Australia",
+      "batch": "v1",
+      "context": "David works in Sydney. Sydney is part of Australia.",
+      "dedup_key_sha256": "5f683c98c0104feb1d2b3175fe113dc192663d51de2f7257f96937f8a0c84755",
+      "hops": 2,
+      "overlap_train_indices": [
+        41,
+        78
+      ],
+      "question": "Which country does David work in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 59
+    },
+    {
+      "answer": "Australia",
+      "batch": "v1",
+      "context": "David moved to Sydney. Sydney is part of Australia. Australia lies on the continent of Oceania.",
+      "dedup_key_sha256": "f22635272a1fc048b2000ed9cbeb2e9bb90dede6c1a7513b9e1c867d54f3d660",
+      "hops": 3,
+      "overlap_train_indices": [
+        138,
+        510
+      ],
+      "question": "What country did David move to?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 60
+    },
+    {
+      "answer": "Spain",
+      "batch": "v1",
+      "context": "Felix was born in Madrid. Madrid is a city in Spain. Spain is located in Europe.",
+      "dedup_key_sha256": "4ad344652638ac61e631aea8cb4e557ac4f692303ab4b4dda2e6aebaa2d54d75",
+      "hops": 3,
+      "overlap_train_indices": [
+        185,
+        260
+      ],
+      "question": "Which country was Felix born in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 61
+    },
+    {
+      "answer": "South Korea",
+      "batch": "v1",
+      "context": "Nina was born in Seoul. Seoul is a city in South Korea.",
+      "dedup_key_sha256": "360f7d3405db012ec7e36276b153015e49f4f4387a4449e7c5f8636d4b472ab7",
+      "hops": 2,
+      "overlap_train_indices": [
+        216
+      ],
+      "question": "In which country was Nina born?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 64
+    },
+    {
+      "answer": "United Kingdom",
+      "batch": "v1",
+      "context": "Zara was born in London. London is a city in United Kingdom. United Kingdom is located in Europe.",
+      "dedup_key_sha256": "2a5554f66ee863915dd50328ff60993b04264390b083a5251aaae0527666948e",
+      "hops": 3,
+      "overlap_train_indices": [
+        298,
+        388
+      ],
+      "question": "Which country was Zara born in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 65
+    },
+    {
+      "answer": "China",
+      "batch": "v1",
+      "context": "Chen Wei was born in Beijing. Beijing is a city in China.",
+      "dedup_key_sha256": "9c02515a3de526ba88d66117a91a54eb0bde531af65fc40669da758b9e436693",
+      "hops": 2,
+      "overlap_train_indices": [
+        50,
+        130
+      ],
+      "question": "In which country was Chen Wei born?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 66
+    },
+    {
+      "answer": "14",
+      "batch": "v1",
+      "context": "David works in Sydney. Sydney is located in Australia. Australia is on the continent of Oceania. Oceania consists of roughly 14 nations.",
+      "dedup_key_sha256": "36ef1f7327cc822cbc6eed50cd2a856028ab1a1d4f2b8147a712b84cefbe25f2",
+      "hops": 4,
+      "overlap_train_indices": [
+        418
+      ],
+      "question": "How many nations are on the continent where David works?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 67
+    },
+    {
+      "answer": "Italy",
+      "batch": "v1",
+      "context": "Maria was born in Rome. Rome is a city in Italy.",
+      "dedup_key_sha256": "b7f0e3ef5e373e9fefff04881aa965a1405905570b2a31fe1d8072bee77ca078",
+      "hops": 2,
+      "overlap_train_indices": [
+        147,
+        229
+      ],
+      "question": "In which country was Maria born?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 69
+    },
+    {
+      "answer": "Canada",
+      "batch": "v1",
+      "context": "James works in Toronto. Toronto is part of Canada.",
+      "dedup_key_sha256": "dce4a0ea75daea57705b4d21f6fcd36049c65484ebb518994c9f9c67a1895038",
+      "hops": 2,
+      "overlap_train_indices": [
+        38,
+        113,
+        412
+      ],
+      "question": "Which country does James work in?",
+      "reason": "exact_train_eval_overlap",
+      "source_eval_index": 70
+    }
+  ],
+  "removed_overlap_rows": 110,
+  "source_eval_path": "data\\tasks\\multi_hop_reasoning\\test_enhanced.jsonl",
+  "source_eval_rows": 514,
+  "train_path": "data\\tasks\\multi_hop_reasoning\\train.jsonl",
+  "train_rows": 560
+}

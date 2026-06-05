@@ -1,0 +1,38 @@
+# Phase 2: OOGA Prototype Validation
+# Validates H4: OOGA >= same-parameter Transformer on structured tasks
+# NOTE: Do not start Phase 2 until Phase 1 is fully complete.
+
+experiment:
+  name: phase2_ooga_prototype
+  seed: 42
+  seeds: [42, 123, 456]
+
+ooga:
+  skeleton:                          # hard-coded, not trained
+    layer0_ops: [AND, OR, NOT, ADD, SUB, EQ, GT, LT, MEMBER_OF, CAUSES]
+    layer1_types: [Number, Entity, Event, Proposition]
+    methods_per_class: 2
+  muscle:
+    transformer_layers: 6
+    hidden_dim: 256
+    routing: gumbel_softmax          # soft routing during training
+    routing_temperature: 1.0
+  baseline_transformer:
+    layers: 6
+    hidden_dim: 256                  # matched parameters
+
+tasks:
+  language_modeling:
+    dataset: wikitext-2
+  arithmetic:
+    digits: [2, 3, 4]
+    operations: [add, sub, mul]
+  logical_reasoning:
+    type: propositional
+    depth: [1, 2, 3]
+  compositional:
+    type: attribute_binding
+    attributes: [color, size, shape, position]
+
+paths:
+  results_dir: results/phase2/

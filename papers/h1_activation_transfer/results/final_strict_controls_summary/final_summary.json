@@ -1,0 +1,72 @@
+{
+  "per_run": [
+    {
+      "path": "papers\\h1_activation_transfer\\results\\final_strict_controls\\h1_shuffled_translation_strict_matched_fwd_seed123_alpha1p0.json",
+      "condition": "shuffled_translation_strict_matched",
+      "direction": "fwd",
+      "seed": 123,
+      "deterministic": false,
+      "n": 383,
+      "clean_eval_hash": "504e077cf17433e22967c86e98d321532d4e803dbe24d96af14c7e8ecdd0dcbb",
+      "checkpoint": "results\\phase1\\checkpoints\\m6_translation_fwd_seed123.pt",
+      "exact_match_acc": 0.0,
+      "normalized_exact_match_acc": 0.0,
+      "word_boundary_contains_acc": 0.0026109660574412533,
+      "first_answer_span_match_acc": 0.0,
+      "legacy_contains_acc": 0.005221932114882507
+    },
+    {
+      "path": "papers\\h1_activation_transfer\\results\\final_strict_controls\\h1_shuffled_translation_strict_matched_fwd_seed42_alpha1p0.json",
+      "condition": "shuffled_translation_strict_matched",
+      "direction": "fwd",
+      "seed": 42,
+      "deterministic": false,
+      "n": 383,
+      "clean_eval_hash": "504e077cf17433e22967c86e98d321532d4e803dbe24d96af14c7e8ecdd0dcbb",
+      "checkpoint": "results\\phase1\\checkpoints\\m6_translation_fwd_seed42.pt",
+      "exact_match_acc": 0.0,
+      "normalized_exact_match_acc": 0.0,
+      "word_boundary_contains_acc": 0.0026109660574412533,
+      "first_answer_span_match_acc": 0.0,
+      "legacy_contains_acc": 0.005221932114882507
+    },
+    {
+      "path": "papers\\h1_activation_transfer\\results\\final_strict_controls\\h1_shuffled_translation_strict_matched_fwd_seed456_alpha1p0.json",
+      "condition": "shuffled_translation_strict_matched",
+      "direction": "fwd",
+      "seed": 456,
+      "deterministic": false,
+      "n": 383,
+      "clean_eval_hash": "504e077cf17433e22967c86e98d321532d4e803dbe24d96af14c7e8ecdd0dcbb",
+      "checkpoint": "results\\phase1\\checkpoints\\m6_translation_fwd_seed456.pt",
+      "exact_match_acc": 0.0,
+      "normalized_exact_match_acc": 0.0,
+      "word_boundary_contains_acc": 0.010443864229765013,
+      "first_answer_span_match_acc": 0.0,
+      "legacy_contains_acc": 0.015665796344647518
+    }
+  ],
+  "by_condition": [
+    {
+      "condition": "shuffled_translation_strict_matched",
+      "direction": "fwd",
+      "runs": 3,
+      "seeds": [
+        123,
+        42,
+        456
+      ],
+      "n": 383,
+      "exact_match_acc_mean": 0.0,
+      "exact_match_acc_std": 0.0,
+      "normalized_exact_match_acc_mean": 0.0,
+      "normalized_exact_match_acc_std": 0.0,
+      "word_boundary_contains_acc_mean": 0.005221932114882507,
+      "word_boundary_contains_acc_std": 0.004522325868326051,
+      "first_answer_span_match_acc_mean": 0.0,
+      "first_answer_span_match_acc_std": 0.0,
+      "legacy_contains_acc_mean": 0.008703220191470844,
+      "legacy_contains_acc_std": 0.006029767824434733
+    }
+  ]
+}

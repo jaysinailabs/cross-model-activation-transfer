@@ -1,0 +1,26 @@
+# Phase 3: Training Efficiency Validation
+# Validates H3: shared base B improves training efficiency
+# NOTE: Do not start Phase 3 until Phase 2 is fully complete.
+
+experiment:
+  name: phase3_training_efficiency
+  seed: 42
+  seeds: [42, 123, 456]
+
+base_density_ablation:
+  sizes: [100, 1000, 10000]         # sparse → medium → dense B
+
+training:
+  model: pythia-70m                 # small enough to train from scratch on one GPU
+  max_steps: 10000
+  eval_interval: 500
+  batch_size: 16
+  learning_rate: 3.0e-4
+
+metrics:
+  convergence_speed: true           # steps to reach target loss
+  parameter_efficiency: true        # performance per parameter
+  hallucination_rate: true          # factual accuracy on fixed probe set
+
+paths:
+  results_dir: results/phase3/

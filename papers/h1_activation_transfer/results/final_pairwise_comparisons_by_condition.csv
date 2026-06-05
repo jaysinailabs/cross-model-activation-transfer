@@ -1,0 +1,49 @@
+condition,baseline,metric,runs,seeds,n_per_run,n_pooled,delta_mean,ci95_low_pooled,ci95_high_pooled,ci95_method,gained_mean,lost_mean,gained_total,lost_total,mcnemar_p_approx_min
+additive,nl_relay,legacy_contains,3,"[42, 123, 456]",396,1188,0.018518518518518517,-0.003367003367003367,0.04292929292929293,pooled_percentile_bootstrap,36,28.666666666666668,108,86,0.22182319830680594
+additive,nl_relay,normalized_exact_match,3,"[42, 123, 456]",396,1188,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+additive,nl_relay,word_boundary_contains,3,"[42, 123, 456]",396,1188,0.009259259259259259,-0.012626262626262626,0.031144781144781145,pooled_percentile_bootstrap,31.333333333333332,27.666666666666668,94,83,0.4423557332951405
+additive,no_inject,legacy_contains,3,"[42, 123, 456]",396,1188,0.005892255892255892,-0.003367003367003367,0.015151515151515152,pooled_percentile_bootstrap,6.333333333333333,4,19,12,0.11384629800665803
+additive,no_inject,normalized_exact_match,3,"[42, 123, 456]",396,1188,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+additive,no_inject,word_boundary_contains,3,"[42, 123, 456]",396,1188,0.004208754208754209,-0.004208754208754209,0.012626262626262626,pooled_percentile_bootstrap,5.333333333333333,3.6666666666666665,16,11,0.18242243945173575
+b_to_b_self_inject,nl_relay,legacy_contains,1,[None],396,396,0.012626262626262626,-0.027777777777777776,0.05303030303030303,pooled_percentile_bootstrap,35,30,35,30,0.6197963884941331
+b_to_b_self_inject,nl_relay,normalized_exact_match,1,[None],396,396,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+b_to_b_self_inject,nl_relay,word_boundary_contains,1,[None],396,396,0.005050505050505051,-0.03282828282828283,0.04292929292929293,pooled_percentile_bootstrap,30,28,30,28,0.8955329031670437
+b_to_b_self_inject,no_inject,legacy_contains,1,[None],396,396,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+b_to_b_self_inject,no_inject,normalized_exact_match,1,[None],396,396,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+b_to_b_self_inject,no_inject,word_boundary_contains,1,[None],396,396,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+best_alpha,nl_relay,legacy_contains,3,"[42, 123, 456]",396,1188,-0.01936026936026936,-0.03956228956228956,0.0,pooled_percentile_bootstrap,21,28.666666666666668,63,86,0.08005278235757937
+best_alpha,nl_relay,normalized_exact_match,3,"[42, 123, 456]",396,1188,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+best_alpha,nl_relay,word_boundary_contains,3,"[42, 123, 456]",396,1188,-0.034511784511784514,-0.05387205387205387,-0.015151515151515152,pooled_percentile_bootstrap,15.666666666666666,29.333333333333332,47,88,0.004936818556325082
+best_alpha,no_inject,legacy_contains,3,"[42, 123, 456]",396,1188,-0.03198653198653199,-0.047979797979797977,-0.015993265993265993,pooled_percentile_bootstrap,9.333333333333334,22,28,66,0.0035514648077060716
+best_alpha,no_inject,normalized_exact_match,3,"[42, 123, 456]",396,1188,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+best_alpha,no_inject,word_boundary_contains,3,"[42, 123, 456]",396,1188,-0.03956228956228956,-0.054713804713804715,-0.02441077441077441,pooled_percentile_bootstrap,6.333333333333333,22,19,66,0.00011860013866224713
+replace,nl_relay,legacy_contains,3,"[42, 123, 456]",396,1188,-0.08080808080808081,-0.09764309764309764,-0.06397306397306397,pooled_percentile_bootstrap,2.6666666666666665,34.666666666666664,8,104,1.4345526239753827e-07
+replace,nl_relay,normalized_exact_match,3,"[42, 123, 456]",396,1188,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+replace,nl_relay,word_boundary_contains,3,"[42, 123, 456]",396,1188,-0.08080808080808081,-0.0968013468013468,-0.06481481481481481,pooled_percentile_bootstrap,0.6666666666666666,32.666666666666664,2,98,2.5403120142884282e-08
+replace,no_inject,legacy_contains,3,"[42, 123, 456]",396,1188,-0.09343434343434344,-0.11195286195286196,-0.07575757575757576,pooled_percentile_bootstrap,3,40,9,120,4.909419192794697e-09
+replace,no_inject,normalized_exact_match,3,"[42, 123, 456]",396,1188,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+replace,no_inject,word_boundary_contains,3,"[42, 123, 456]",396,1188,-0.08585858585858586,-0.10185185185185185,-0.06986531986531987,pooled_percentile_bootstrap,1,35,3,105,9.081445518184975e-09
+same_norm_random,nl_relay,legacy_contains,3,"[42, 123, 456]",396,1188,-0.09006734006734007,-0.10606060606060606,-0.07407407407407407,pooled_percentile_bootstrap,0.3333333333333333,36,1,108,5.433087474176228e-09
+same_norm_random,nl_relay,normalized_exact_match,3,"[42, 123, 456]",396,1188,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+same_norm_random,nl_relay,word_boundary_contains,3,"[42, 123, 456]",396,1188,-0.08333333333333333,-0.09932659932659933,-0.06818181818181818,pooled_percentile_bootstrap,0,33,0,99,2.5403120142884282e-08
+same_norm_random,no_inject,legacy_contains,3,"[42, 123, 456]",396,1188,-0.1026936026936027,-0.12037037037037036,-0.08501683501683502,pooled_percentile_bootstrap,0,40.666666666666664,0,122,4.185436944003634e-10
+same_norm_random,no_inject,normalized_exact_match,3,"[42, 123, 456]",396,1188,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+same_norm_random,no_inject,word_boundary_contains,3,"[42, 123, 456]",396,1188,-0.08838383838383838,-0.10521885521885523,-0.0723905723905724,pooled_percentile_bootstrap,0,35,0,105,9.081445518184975e-09
+scale_corrected,nl_relay,legacy_contains,3,"[42, 123, 456]",396,1188,-0.0765993265993266,-0.09427609427609428,-0.05976430976430976,pooled_percentile_bootstrap,3.3333333333333335,33.666666666666664,10,101,4.93394026713873e-07
+scale_corrected,nl_relay,normalized_exact_match,3,"[42, 123, 456]",396,1188,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+scale_corrected,nl_relay,word_boundary_contains,3,"[42, 123, 456]",396,1188,-0.07575757575757576,-0.09175084175084175,-0.058922558922558925,pooled_percentile_bootstrap,1.6666666666666667,31.666666666666668,5,95,1.7668604421878398e-07
+scale_corrected,no_inject,legacy_contains,3,"[42, 123, 456]",396,1188,-0.08922558922558922,-0.1069023569023569,-0.07154882154882154,pooled_percentile_bootstrap,3,38.333333333333336,9,115,8.184516567843228e-09
+scale_corrected,no_inject,normalized_exact_match,3,"[42, 123, 456]",396,1188,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+scale_corrected,no_inject,word_boundary_contains,3,"[42, 123, 456]",396,1188,-0.08080808080808081,-0.0968013468013468,-0.06565656565656566,pooled_percentile_bootstrap,1,33,3,99,2.5403120142884282e-08
+shuffled_translation,nl_relay,legacy_contains,3,"[42, 123, 456]",396,1188,-0.08164983164983165,-0.09764309764309764,-0.06565656565656566,pooled_percentile_bootstrap,2,34.333333333333336,6,103,3.7979124931775475e-08
+shuffled_translation,nl_relay,normalized_exact_match,3,"[42, 123, 456]",396,1188,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+shuffled_translation,nl_relay,word_boundary_contains,3,"[42, 123, 456]",396,1188,-0.07744107744107744,-0.09259259259259259,-0.06228956228956229,pooled_percentile_bootstrap,1.3333333333333333,32,4,96,4.251394408249112e-08
+shuffled_translation,no_inject,legacy_contains,3,"[42, 123, 456]",396,1188,-0.09427609427609428,-0.11195286195286196,-0.0765993265993266,pooled_percentile_bootstrap,2,39.333333333333336,6,118,2.9455745330990598e-09
+shuffled_translation,no_inject,normalized_exact_match,3,"[42, 123, 456]",396,1188,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+shuffled_translation,no_inject,word_boundary_contains,3,"[42, 123, 456]",396,1188,-0.08249158249158249,-0.09932659932659933,-0.0664983164983165,pooled_percentile_bootstrap,1.3333333333333333,34,4,102,1.5185595523520007e-08
+zero_replacement,nl_relay,legacy_contains,1,[None],396,396,-0.08838383838383838,-0.11868686868686869,-0.06060606060606061,pooled_percentile_bootstrap,1,36,1,36,2.2763840010694357e-08
+zero_replacement,nl_relay,normalized_exact_match,1,[None],396,396,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+zero_replacement,nl_relay,word_boundary_contains,1,[None],396,396,-0.08080808080808081,-0.10858585858585859,-0.05303030303030303,pooled_percentile_bootstrap,1,33,1,33,1.0580771204088818e-07
+zero_replacement,no_inject,legacy_contains,1,[None],396,396,-0.10101010101010101,-0.13383838383838384,-0.07323232323232323,pooled_percentile_bootstrap,1,41,1,41,1.767699828306824e-09
+zero_replacement,no_inject,normalized_exact_match,1,[None],396,396,0,0.0,0.0,pooled_percentile_bootstrap,0,0,0,0,1.0
+zero_replacement,no_inject,word_boundary_contains,1,[None],396,396,-0.08585858585858586,-0.11616161616161616,-0.06060606060606061,pooled_percentile_bootstrap,1,35,1,35,3.7979124931775475e-08

@@ -1,0 +1,2 @@
+condition,direction,runs,seeds,n,exact_match_acc_mean,exact_match_acc_std,normalized_exact_match_acc_mean,normalized_exact_match_acc_std,word_boundary_contains_acc_mean,word_boundary_contains_acc_std,first_answer_span_match_acc_mean,first_answer_span_match_acc_std,legacy_contains_acc_mean,legacy_contains_acc_std
+shuffled_translation_strict_matched,fwd,3,"[123, 42, 456]",383,0.0,0.0,0.0,0.0,0.005221932114882507,0.004522325868326051,0.0,0.0,0.008703220191470844,0.006029767824434733

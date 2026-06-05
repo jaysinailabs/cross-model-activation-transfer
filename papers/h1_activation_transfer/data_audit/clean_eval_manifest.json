@@ -1,0 +1,230 @@
+{
+  "acceptance": {
+    "passed": true,
+    "remaining_duplicate_keys": 0,
+    "remaining_overlap_rows": 0
+  },
+  "clean_eval_path": "data\\tasks\\multi_hop_reasoning\\clean_eval.jsonl",
+  "clean_eval_sha256": "504e077cf17433e22967c86e98d321532d4e803dbe24d96af14c7e8ecdd0dcbb",
+  "clean_eval_version": "h1-clean-eval-v1",
+  "clean_summary": {
+    "answer_type_distribution": {
+      "entity": 173,
+      "number": 7,
+      "phrase": 216
+    },
+    "batch_distribution": {
+      "v1": 42,
+      "v2": 354
+    },
+    "domain_inferred_distribution": {
+      "geography": 42,
+      "history_heuristic": 101,
+      "science_heuristic": 101,
+      "technology_heuristic": 118,
+      "unspecified": 34
+    },
+    "hop_distribution": {
+      "2": 186,
+      "3": 139,
+      "4": 71
+    },
+    "n_rows": 396,
+    "n_unique_answers": 204,
+    "top_answers": [
+      {
+        "answer": "Asia",
+        "count": 8
+      },
+      {
+        "answer": "construction",
+        "count": 8
+      },
+      {
+        "answer": "aerospace",
+        "count": 8
+      },
+      {
+        "answer": "the Victorian era",
+        "count": 8
+      },
+      {
+        "answer": "aviation",
+        "count": 8
+      },
+      {
+        "answer": "48",
+        "count": 5
+      },
+      {
+        "answer": "Europe",
+        "count": 4
+      },
+      {
+        "answer": "electronics",
+        "count": 4
+      },
+      {
+        "answer": "power generation",
+        "count": 4
+      },
+      {
+        "answer": "automotive",
+        "count": 4
+      },
+      {
+        "answer": "utilities",
+        "count": 4
+      },
+      {
+        "answer": "the Enlightenment",
+        "count": 4
+      },
+      {
+        "answer": "retail",
+        "count": 4
+      },
+      {
+        "answer": "healthcare",
+        "count": 4
+      },
+      {
+        "answer": "food processing",
+        "count": 4
+      },
+      {
+        "answer": "electric vehicles",
+        "count": 4
+      },
+      {
+        "answer": "Ancient Greece",
+        "count": 4
+      },
+      {
+        "answer": "chemical manufacturing",
+        "count": 4
+      },
+      {
+        "answer": "the Renaissance",
+        "count": 4
+      },
+      {
+        "answer": "computing",
+        "count": 4
+      }
+    ]
+  },
+  "removed_duplicate_rows": 8,
+  "removed_overlap_rows": 110,
+  "source_eval_path": "data\\tasks\\multi_hop_reasoning\\test_enhanced.jsonl",
+  "source_eval_sha256": "c8e78a6efb792bda1828dbd577f905f1028a0c698be0893190cf1b4800b9404e",
+  "source_summary": {
+    "answer_type_distribution": {
+      "entity": 262,
+      "number": 22,
+      "phrase": 230
+    },
+    "batch_distribution": {
+      "v1": 160,
+      "v2": 354
+    },
+    "domain_inferred_distribution": {
+      "geography": 160,
+      "history_heuristic": 101,
+      "science_heuristic": 101,
+      "technology_heuristic": 118,
+      "unspecified": 34
+    },
+    "hop_distribution": {
+      "2": 227,
+      "3": 180,
+      "4": 107
+    },
+    "n_rows": 514,
+    "n_unique_answers": 218,
+    "top_answers": [
+      {
+        "answer": "Asia",
+        "count": 24
+      },
+      {
+        "answer": "Europe",
+        "count": 20
+      },
+      {
+        "answer": "48",
+        "count": 11
+      },
+      {
+        "answer": "Japan",
+        "count": 9
+      },
+      {
+        "answer": "construction",
+        "count": 8
+      },
+      {
+        "answer": "aerospace",
+        "count": 8
+      },
+      {
+        "answer": "the Victorian era",
+        "count": 8
+      },
+      {
+        "answer": "aviation",
+        "count": 8
+      },
+      {
+        "answer": "Africa",
+        "count": 7
+      },
+      {
+        "answer": "44",
+        "count": 6
+      },
+      {
+        "answer": "South America",
+        "count": 6
+      },
+      {
+        "answer": "United Kingdom",
+        "count": 5
+      },
+      {
+        "answer": "South Korea",
+        "count": 5
+      },
+      {
+        "answer": "China",
+        "count": 5
+      },
+      {
+        "answer": "Mexico",
+        "count": 4
+      },
+      {
+        "answer": "India",
+        "count": 4
+      },
+      {
+        "answer": "North America",
+        "count": 4
+      },
+      {
+        "answer": "Australia",
+        "count": 4
+      },
+      {
+        "answer": "Canada",
+        "count": 4
+      },
+      {
+        "answer": "Italy",
+        "count": 4
+      }
+    ]
+  },
+  "train_path": "data\\tasks\\multi_hop_reasoning\\train.jsonl",
+  "train_sha256": "17a71ecbce14ef1a2877dcf0ac9bd9b4d334b395ed7efea114a3f60ab1d7c4bb"
+}

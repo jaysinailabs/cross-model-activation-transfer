@@ -1,0 +1,166 @@
+# Phase 1: Translation Layer Validation
+# Validates H1 (translation layer > natural language) and H2 (shared base + translation > translation alone)
+#
+# Model selection rationale (see plans/preresearch_report_v1.md §3):
+#   - Pythia family eliminates positional encoding and LayerNorm confounds
+#   - Three-tier progressive design isolates representation differences from architecture differences
+#   - Tier 1: method validation (same arch + dim, different data)
+#   - Tier 2: main experiment (same arch, different size → genuine representation gap)
+#   - Tier 3: stress test (different arch → generalizability, optional)
+
+experiment:
+  name: phase1_translation_validation
+  seed: 42
+  seeds: [42, 123, 456]  # all experiments run with these 3 seeds; report mean ± std
+
+# ---------------------------------------------------------------------------
+# Tier 1: Method validation — same architecture, same dim, different training data
+# ---------------------------------------------------------------------------
+tier1:
+  sender:
+    name: pythia-160m
+    hf_id: EleutherAI/pythia-160m
+    hidden_dim: 768
+    num_layers: 12
+    layer_prefix: gpt_neox.layers    # layer name template: gpt_neox.layers.<idx>
+  receiver:
+    name: pythia-160m-deduped
+    hf_id: EleutherAI/pythia-160m-deduped
+    hidden_dim: 768
+    num_layers: 12
+    layer_prefix: gpt_neox.layers
+
+# ---------------------------------------------------------------------------
+# Tier 2: Main experiment — same architecture, different size and capacity
+# ---------------------------------------------------------------------------
+tier2:
+  sender:
+    name: pythia-160m
+    hf_id: EleutherAI/pythia-160m
+    hidden_dim: 768
+    num_layers: 12
+    layer_prefix: gpt_neox.layers
+  receiver:
+    name: pythia-410m
+    hf_id: EleutherAI/pythia-410m
+    hidden_dim: 1024
+    num_layers: 24
+    layer_prefix: gpt_neox.layers
+
+# ---------------------------------------------------------------------------
+# Tier 3 (optional): Stress test — different architecture
+# ---------------------------------------------------------------------------
+tier3:
+  sender:
+    name: pythia-160m
+    hf_id: EleutherAI/pythia-160m
+    hidden_dim: 768
+    num_layers: 12
+    layer_prefix: gpt_neox.layers
+  receiver:
+    name: gpt2
+    hf_id: gpt2
+    hidden_dim: 768
+    num_layers: 12
+    layer_prefix: transformer.h       # layer name template: transformer.h.<idx>
+
+# ---------------------------------------------------------------------------
+# Layer extraction: scan multiple layers, don't commit to one upfront
+# Layer index is relative (0.0 = first, 0.5 = middle, 1.0 = last)
+# Actual layer = int(relative * num_layers)
+# ---------------------------------------------------------------------------
+extraction:
+  layer_scan: [0.33, 0.5, 0.67, 0.83]   # scan 4 relative positions
+  # For 12-layer model: layers 4, 6, 8, 10
+  # For 24-layer model: layers 8, 12, 16, 20
+  default_relative_layer: 0.67            # ~layer 8/12 (literature suggests 8-10 is optimal)
+
+# ---------------------------------------------------------------------------
+# Translation layer: progressive architecture test (simple → complex)
+# ---------------------------------------------------------------------------
+translation_layer:
+  architectures:
+    linear:                          # Conneau et al. suggest linear might suffice
+      type: linear
+    mlp_1hidden:                     # minimal nonlinear
+      type: mlp
+      hidden_dim: 512
+      num_layers: 1
+      activation: gelu
+    mlp_3hidden:                     # original design, upper bound
+      type: mlp
+      hidden_dim: 1024
+      num_layers: 3
+      activation: gelu
+  default_architecture: mlp_1hidden  # start here; escalate only if insufficient
+  loss: mse                          # options: mse, cosine, contrastive
+  normalize_activations: true        # L2 normalize before translation (mitigates scale differences)
+  training:
+    epochs: 30
+    batch_size: 32
+    learning_rate: 1.0e-4
+    warmup_steps: 100
+    train_samples: 30000
+    val_samples: 5000
+
+# ---------------------------------------------------------------------------
+# Alignment: Group 3 (shared base) settings — only activate after H1 validated
+# ---------------------------------------------------------------------------
+alignment:
+  enabled: false                     # flip to true after H1 shows positive signal
+  base_data_size: 1000               # start with 1k; ablate: 100, 1k, 5k
+  lora_rank: 8
+  lora_alpha: 16
+  lambda_align: 0.01                 # conservative start (was 0.1); ablate: 0.01, 0.1, 1.0
+  epochs: 3
+  learning_rate: 2.0e-5
+  capability_retention_threshold: 0.95  # must retain ≥95% of original performance
+
+# ---------------------------------------------------------------------------
+# Tasks
+# ---------------------------------------------------------------------------
+tasks:
+  multi_hop_reasoning:
+    num_samples: 800
+    min_hops: 2
+    max_hops: 4
+    train_split: 0.7
+    val_split: 0.1
+    test_split: 0.2
+  instruction_following:
+    num_samples: 600
+    num_constraints: [2, 3, 4]
+    train_split: 0.7
+    val_split: 0.1
+    test_split: 0.2
+  knowledge_relay:
+    num_samples: 600
+    passage_words: [200, 500]
+    train_split: 0.7
+    val_split: 0.1
+    test_split: 0.2
+
+# ---------------------------------------------------------------------------
+# Evaluation metrics
+# ---------------------------------------------------------------------------
+evaluation:
+  primary_metric: task_accuracy
+  structural_metrics: [cka, procrustes, cosine_similarity]  # added per pre-research
+  diagnostic_metric: svcca                                   # for failure analysis
+  significance_test: mannwhitney
+  alpha: 0.05
+  min_effect_size: 0.05
+
+# ---------------------------------------------------------------------------
+# Hardware
+# ---------------------------------------------------------------------------
+hardware:
+  device: auto                       # auto-detect: ROCm (WSL2) → CUDA → CPU
+  fp16: false                        # enable if VRAM < 10 GB
+  max_vram_gb: 12
+  dataloader_workers: 2
+
+paths:
+  data_dir: data/
+  results_dir: results/phase1/
+  model_cache: models_cache/

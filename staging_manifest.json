@@ -1,0 +1,11 @@
+{
+  "staged_from": "<local-source-repository>",
+  "output_dir": "<staged-paper-repository>",
+  "file_count": 136,
+  "notes": [
+    "Generated staging directory for a public code-and-data artifact repository.",
+    "Local absolute source-checkout paths were rewritten in text artifacts.",
+    "Large checkpoint/model/cache artifacts are intentionally excluded.",
+    "Manuscript sources are intentionally excluded; the paper is published separately."
+  ]
+}

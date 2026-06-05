@@ -1,0 +1,18 @@
+{
+  "task": "multi_hop_reasoning",
+  "total": 800,
+  "train": 560,
+  "val": 80,
+  "test": 160,
+  "splits": {
+    "train": 0.7,
+    "val": 0.1,
+    "test": 0.2
+  },
+  "seed": 42,
+  "hop_distribution": {
+    "2": 268,
+    "3": 266,
+    "4": 266
+  }
+}
