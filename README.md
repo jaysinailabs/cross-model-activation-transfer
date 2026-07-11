@@ -47,6 +47,7 @@ python papers/h1_activation_transfer/scripts/validate_final_results.py \
                 papers/h1_activation_transfer/results/final_strict_controls \
   --include-strict-matched \
   --output-dir papers/h1_activation_transfer/results/final_with_strict_controls
+python papers/h1_activation_transfer/scripts/equivalence_analysis.py
 ```
 
 The full clean rerun requires local Pythia model downloads and translation

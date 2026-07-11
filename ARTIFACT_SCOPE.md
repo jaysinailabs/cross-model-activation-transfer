@@ -15,7 +15,7 @@ without the full upstream research project and without the manuscript sources.
 - deterministic clean-eval builder and clean evaluation data
 - final result JSON files and derived summaries
 - strict matched shuffled controls
-- metric, validation, comparison, and figure scripts
+- metric, validation, comparison, equivalence, and figure scripts
 
 ## Excluded
 
